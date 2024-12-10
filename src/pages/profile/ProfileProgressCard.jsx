@@ -41,6 +41,8 @@ const ProfileProgressCard = ({
   const dispatch = useDispatch();
 
   console.log(dependentId, imgError);
+  console.log("profileProgressCard: ", percentage);
+  
 
   const handleCameraClick = () => {
     // event.stopPropagation();

@@ -357,6 +357,9 @@ const DependentInfo = ({
   useEffect(() => {
     setCurrentStep(1);
   }, [selectedDependentIdx]);
+
+  console.log("percentageFromDependentInfo: ", percentage);
+  
   return (
     <div className="w-full p-3 border rounded-lg md:p-5 lg:p-8">
       <div className="mb-2">

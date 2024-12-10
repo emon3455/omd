@@ -113,8 +113,12 @@ const UpdateProfilePage = () => {
   const [addDependent, { isLoading }] = useAddDependentMutation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  
+
+  console.log("updateProfile dependents", dependents);
 
   const handleAddDependent = () => {
+    // setActivePerson(dependents.length);
     if (!user?.lyricsUserId && !user?.PrimaryMemberGUID) {
       toast.error("Please complete your profile first. ");
       return;
@@ -395,6 +399,8 @@ const UpdateProfilePage = () => {
     });
   }, [activePerson]);
 
+  console.log("percentegeFromUpdateProfile", completionPercentage);
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-[2fr_12fr_4fr] w-full max-w-screen-xl gap-6 px-3 mx-auto mt-6 mb-8 h-fit lg:px-16 md:mb-12 lg:mb-16">
       {/* Left Section */}
@@ -544,21 +550,25 @@ const UpdateProfilePage = () => {
           dependents={dependents}
           setDependents={setDependents}
           setAddMoreDependent={setAddMoreDependent}
-          percentage={calculateCompletionPercentage(
-            dependents[activePerson - 1],
-            [[
-              "firstName",
-              "lastName",
-              "sex",
-              "dob",
-              "shipingAddress1",
-              "shipingCity",
-              {
-                shipingState: ["value", "label"],
-              },
-              "shipingZip",
-            ], "relation"]
-          )}
+          // percentage={calculateCompletionPercentage(
+          //   dependents[activePerson - 1],
+          //   [[
+          //     "firstName",
+          //     "lastName",
+          //     "sex",
+          //     "dob",
+          //     "shipingAddress1",
+          //     "shipingCity",
+          //     {
+          //       shipingState: ["value", "label"],
+          //     },
+          //     "shipingZip",
+          //   ], "relation"]
+          // )}
+          percentage={calculateCompletionPercentage(dependents[activePerson - 1], [
+            ...requiredFields,
+            "relation",
+          ])}
         />
       )}
 

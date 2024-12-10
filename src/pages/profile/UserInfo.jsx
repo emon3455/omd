@@ -116,6 +116,7 @@ const UserInfo = ({
       setSubmitting(false);
     }
   };
+  console.log("UserInfoPercentage: ", completionPercentage)
   return (
     <div className="w-full p-3 border rounded-lg md:p-4 lg:p-8">
       <div className="mb-6">
@@ -132,6 +133,7 @@ const UserInfo = ({
         validateInfo={validateInfo}
         validateAddresses={validateAddresses}
       /> */}
+
       <ProgressBar
         image={userInfo.image}
         percentage={completionPercentage}

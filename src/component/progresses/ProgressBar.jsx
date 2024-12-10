@@ -2,6 +2,10 @@ import {} from "react";
 import { cn } from "../../utils/cn";
 
 const ProgressBar = ({ percentage, className }) => {
+ 
+  console.log("parcentage in progressbar: ",percentage);
+  
+  
   return (
     <div className={cn("w-full bg-gray-200 rounded-full h-2", className)}>
       {/* Progress bar */}

@@ -1,6 +1,7 @@
-import React from 'react';
+// import React from 'react';
 
 const CircularProgress = ({ percentage }) => {
+  console.log("CircularProgress: ",percentage);
   const radius = 60; // Radius of the circle
   const stroke = 8; // Thickness of the stroke
   const normalizedRadius = radius - stroke * 0.5;
@@ -9,6 +10,10 @@ const CircularProgress = ({ percentage }) => {
 
   // Calculate the offset based on the percentage, relative to 80% of the circumference
   const strokeDashoffset = maxOffset - (percentage / 100) * maxOffset;
+
+  console.log("percentage: ",percentage);
+
+
 
   return (
     <div className="flex z-0 items-center justify-center w-32 h-32 relative">
